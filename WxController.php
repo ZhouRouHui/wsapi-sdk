@@ -435,6 +435,18 @@ class WxController extends Controller
     }
 
     /**
+     * 网络检测
+     */
+    public function netCheck()
+    {
+        $wxService = new WxService();
+        $accessToken = $wxService->getWxGlobalAccessToken();
+        $data = ['action' => 'all', 'check_operator' => 'default'];
+        $res = $wxService->netCheck($accessToken, $data);
+        var_dump($res);
+    }
+
+    /**
      * 测试
      */
     public function test()

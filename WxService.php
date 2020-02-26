@@ -518,4 +518,17 @@ class WxService
             return $res['ticket'];
         }
     }
+
+    /**
+     * 网络检测
+     *
+     * @param $accessToken
+     * @param $data
+     * @return bool|string
+     */
+    public function netCheck($accessToken, $data)
+    {
+        $url = 'https://api.weixin.qq.com/cgi-bin/callback/check?access_token='.$accessToken;
+        return self::httpCurl($url, 'post', 'json', $data);
+    }
 }

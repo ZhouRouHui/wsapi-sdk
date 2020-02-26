@@ -14,5 +14,6 @@ Route::group(['prefix' => 'wx'], function() {
     Route::get('js-sdk', 'WxController@wxJsSdk'); // 微信 jssdk 使用
     Route::get('temp/qrcode', 'WxController@tempQrCode'); // 临时二维码
     Route::get('everlasting/qrcode', 'WxController@everlastingQrCode'); // 临时二维码
+    Route::get('net/check', 'WxController@netCheck'); // 网络检测
     Route::get('test', 'WxController@test'); // 测试基础字符
 });
